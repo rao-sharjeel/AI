@@ -1,0 +1,30 @@
+graph = {
+    'A' : ['B','C'],
+    'B' : ['D', 'E'],
+    'C' : ['F'],
+    'D' : [],
+    'E' : ['F'],
+    'F' : []
+}
+visited = []
+stack = []
+print("This is BFS traversal")
+root = input("Enter Root Node : ")
+stack.append(root)
+while len(stack) != 0:
+    visiting_node = stack.pop(0)
+    visited.append(visiting_node)
+    for i in range(len(graph[visiting_node])):
+        if graph[visiting_node][i] not in visited and graph[visiting_node][i] not in stack:
+            stack.append(graph[visiting_node][i])
+    if graph[visiting_node] == None:
+        break
+    
+print(visited)
+
+
+
+
+
+
+
